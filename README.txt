@@ -1,32 +1,29 @@
-= omnifocus_rubyforge
+= omnifocus-rubyforge
 
-* FIX (url)
+* http://rubyforge.org/projects/seattlerb
 
 == DESCRIPTION:
 
-FIX (describe your package)
+Plugin for omnifocus gem to provide rubyforge BTS synchronization.
 
 == FEATURES/PROBLEMS:
 
-* FIX (list of features or problems)
-
-== SYNOPSIS:
-
-  FIX (code sample of usage)
+* Provides rubyforge BTS synchronization.
 
 == REQUIREMENTS:
 
-* FIX (list of requirements)
+* omnifocus
+* rubyforge (gem & user configuration -- `rubyforge login` must work)
 
 == INSTALL:
 
-* FIX (sudo gem install, anything else)
+* sudo gem install omnifocus-rubyforge
 
 == LICENSE:
 
 (The MIT License)
 
-Copyright (c) 2009 Ryan Davis, seattle.rb
+Copyright (c) Ryan Davis, seattle.rb
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the

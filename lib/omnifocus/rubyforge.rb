@@ -1,5 +1,8 @@
+require 'rubyforge'
+
 module OmniFocus::Rubyforge
-  RF_URL = "http://rubyforge.org"
+  VERSION = '1.0.0'
+  RF_URL  = "http://rubyforge.org"
 
   def rubyforge
     unless defined? @rubyforge then
