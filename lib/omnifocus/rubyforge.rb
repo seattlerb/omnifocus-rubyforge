@@ -1,7 +1,7 @@
 require 'rubyforge'
 
 module OmniFocus::Rubyforge
-  VERSION = '1.0.0'
+  VERSION = '1.1.0'
   RF_URL  = "http://rubyforge.org"
 
   def rubyforge
@@ -37,13 +37,14 @@ module OmniFocus::Rubyforge
     rubyforge_tickets = home.links_with(:href => /^.tracker/)
     rubyforge_tickets.each do |link|
       if link.href =~ /func=detail&aid=(\d+)&group_id=(\d+)&atid=(\d+)/ then
-        ticket_id, group_id = $1.to_i, $2.to_i
+        ticket_id, group_id = "RF##{$1}", $2.to_i
         group = group_ids[group_id]
 
         next unless group
 
         if existing[ticket_id] then
-          bug_db[existing[ticket_id]][ticket_id] = true
+          project = existing[ticket_id]
+          bug_db[project][ticket_id] = true
           next
         end
 
@@ -53,7 +54,7 @@ module OmniFocus::Rubyforge
         project = select.selected_options.first
         project = project ? project.text.downcase : group
         project = group if project =~ /\s/
-        title   = "RF##{ticket_id}: #{link.text}"
+        title   = "#{ticket_id}: #{link.text}"
         url     = "#{RF_URL}/#{link.href}"
 
         bug_db[project][ticket_id] = [title, url]
