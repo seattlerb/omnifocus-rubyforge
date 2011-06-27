@@ -1,6 +1,7 @@
 = omnifocus-rubyforge
 
-* http://rubyforge.org/projects/seattlerb
+home :: https://github.com/seattlerb/omnifocus-rubyforge
+rdoc :: http://seattlerb.rubyforge.org/omnifocus-rubyforge
 
 == DESCRIPTION:
 
