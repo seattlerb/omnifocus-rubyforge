@@ -3,6 +3,7 @@ require 'rubyforge'
 module OmniFocus::Rubyforge
   VERSION = '1.1.0'
   RF_URL  = "http://rubyforge.org"
+  PREFIX  = "RF"
 
   def rubyforge
     unless defined? @rubyforge then
@@ -37,7 +38,7 @@ module OmniFocus::Rubyforge
     rubyforge_tickets = home.links_with(:href => /^.tracker/)
     rubyforge_tickets.each do |link|
       if link.href =~ /func=detail&aid=(\d+)&group_id=(\d+)&atid=(\d+)/ then
-        ticket_id, group_id = "RF##{$1}", $2.to_i
+        ticket_id, group_id = "#{PREFIX}##{$1}", $2.to_i
         group = group_ids[group_id]
 
         next unless group
@@ -48,7 +49,7 @@ module OmniFocus::Rubyforge
           next
         end
 
-        warn "scanning ticket RF##{ticket_id}"
+        warn "scanning ticket #{ticket_id}"
         details = link.click.form_with :action => /^.tracker/
         select  = details.field_with   :name   => "category_id"
         project = select.selected_options.first
