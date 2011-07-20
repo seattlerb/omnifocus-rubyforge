@@ -1,7 +1,7 @@
 require 'rubyforge'
 
 module OmniFocus::Rubyforge
-  VERSION = '1.1.0'
+  VERSION = '1.1.1'
   RF_URL  = "http://rubyforge.org"
   PREFIX  = "RF"
 
