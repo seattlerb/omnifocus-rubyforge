@@ -11,8 +11,6 @@ Hoe.spec 'omnifocus-rubyforge' do
 
   dependency 'omnifocus', "~> 2.0"
   dependency 'rubyforge', "~> 2.0.4"
-
-  self.rubyforge_name = 'seattlerb'
 end
 
 # vim: syntax=ruby
